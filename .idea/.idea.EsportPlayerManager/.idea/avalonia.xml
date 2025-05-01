@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="EsportPlayerManager/Views/MainWindow.axaml" value="EsportPlayerManager/EsportPlayerManager.csproj" />
+        <entry key="EsportPlayerManager/Views/PlayersView.axaml" value="EsportPlayerManager/EsportPlayerManager.csproj" />
+      </map>
+    </option>
+  </component>
+</project>
