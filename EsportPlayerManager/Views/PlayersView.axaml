@@ -1,0 +1,78 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModels="clr-namespace:EsportPlayerManager.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:DataType="viewModels:PlayersViewModel"
+             x:Class="EsportPlayerManager.Views.PlayersView">
+
+    <UserControl.DataContext>
+        <viewModels:PlayersViewModel/>
+    </UserControl.DataContext>
+    
+    <StackPanel>
+        <TextBlock Text="New Player" HorizontalAlignment="Center"/>
+        
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Nick Name " FontSize="25"/>
+            <TextBox Text="{Binding NickName, Mode=TwoWay}" Width="200"/>
+        </StackPanel>
+        
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Game " FontSize="25"/>
+            <TextBox Text="{Binding Game, Mode=TwoWay}" Width="200"/>
+        </StackPanel>
+        
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Skill Level " FontSize="25"/>
+            <TextBox Text="{Binding SkillLevel, Mode=TwoWay}" Width="200"/>
+        </StackPanel>
+        
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Stress Level " FontSize="25"/>
+            <TextBox Text="{Binding StressLevel, Mode=TwoWay}" Width="200"/>
+        </StackPanel>
+        
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Fatigue Level " FontSize="25"/>
+            <TextBox Text="{Binding FatigueLevel, Mode=TwoWay}" Width="200"/>
+        </StackPanel>
+        
+        <Button Content="Add Player"
+                Command="{Binding AddPlayerCommand}"
+                HorizontalAlignment="Center"/>
+        
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <ListBox ItemsSource="{Binding Players}" MaxHeight="350">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Nickname: "/>
+                                <TextBlock Text="{Binding nick_name}" FontSize="16"/>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Game: "/>
+                                <TextBlock Text="{Binding game}" FontSize="16"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Skill Level: "/>
+                                <TextBlock Text="{Binding skill_level}" FontSize="16"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Stress Level: "/>
+                                <TextBlock Text="{Binding stress_level}" FontSize="16"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Fatigue Level: "/>
+                                <TextBlock Text="{Binding fatigue_level}" FontSize="16"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </ScrollViewer>
+    </StackPanel>
+</UserControl>

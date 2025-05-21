@@ -1,12 +1,12 @@
 <Window 
-    xmlns="https://github.com/avaloniaui"
+        xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vm="using:EsportPlayerManager.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="EsportPlayerManager.Views.MainWindow"
-        x:DataType="vm:PlayerViewModel"
+        x:DataType="vm:MainWindowViewModel"
         Icon="/Assets/avalonia-logo.ico"
         Title="EsportPlayerManager">
 
@@ -17,68 +17,27 @@
     </Design.DataContext>
     
     <StackPanel Margin="20">
-        <TextBlock Text="New Player" HorizontalAlignment="Center"/>
-        
-        <StackPanel Orientation="Horizontal">
-            <TextBlock Text="Nick Name " FontSize="25"/>
-            <TextBox Text="{Binding NickName, Mode=TwoWay}" Width="200"/>
-        </StackPanel>
-        
-        <StackPanel Orientation="Horizontal">
-            <TextBlock Text="Game " FontSize="25"/>
-            <TextBox Text="{Binding Game, Mode=TwoWay}" Width="200"/>
-        </StackPanel>
-        
-        <StackPanel Orientation="Horizontal">
-            <TextBlock Text="Skill Level " FontSize="25"/>
-            <TextBox Text="{Binding SkillLevel, Mode=TwoWay}" Width="200"/>
-        </StackPanel>
-        
-        <StackPanel Orientation="Horizontal">
-            <TextBlock Text="Stress Level " FontSize="25"/>
-            <TextBox Text="{Binding StressLevel, Mode=TwoWay}" Width="200"/>
-        </StackPanel>
-        
-        <StackPanel Orientation="Horizontal">
-            <TextBlock Text="Fatigue Level " FontSize="25"/>
-            <TextBox Text="{Binding FatigueLevel, Mode=TwoWay}" Width="200"/>
-        </StackPanel>
-        
-        <Button Content="Add Player"
-                Command="{Binding AddPlayerCommand}"
-                HorizontalAlignment="Center"/>
-        
-        <ScrollViewer VerticalScrollBarVisibility="Auto">
-            <ListBox ItemsSource="{Binding Players}" MaxHeight="300">
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel>
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="Nickname: "/>
-                                <TextBlock Text="{Binding nick_name}" FontSize="16"/>
-                            </StackPanel>
-
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="Game: "/>
-                                <TextBlock Text="{Binding game}" FontSize="16"/>
-                            </StackPanel>
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="Skill Level: "/>
-                                <TextBlock Text="{Binding skill_level}" FontSize="16"/>
-                            </StackPanel>
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="Stress Level: "/>
-                                <TextBlock Text="{Binding stress_level}" FontSize="16"/>
-                            </StackPanel>
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="Fatigue Level: "/>
-                                <TextBlock Text="{Binding fatigue_level}" FontSize="16"/>
-                            </StackPanel>
-                        </StackPanel>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>
-        </ScrollViewer>
+       <Grid RowDefinitions="Auto, *">
+            <Grid Grid.Row="0" ColumnDefinitions="*, *, *">
+                <Button Grid.Column="0" 
+                    IsEnabled="{Binding PlayerButtonEnabled}"
+                        Command="{Binding ShowPlayerCommand}"
+                    Margin="10" HorizontalContentAlignment="Center"
+                    Content="Show Players" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                
+                <Button Grid.Column="1" 
+                    IsEnabled="{Binding TournamentsButtonEnabled}"
+                    Margin="10" HorizontalContentAlignment="Center"
+                    Content="Show Tournaments" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                <Button Grid.Column="2" 
+                    IsEnabled="{Binding TrenningButtonEnabled}"
+                    Margin="10" HorizontalContentAlignment="Center"
+                    Content="Show Trenning" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+            </Grid>
+           
+           <ContentControl Grid.Row="1" Content="{Binding CurrentView}">
+               
+           </ContentControl>
+       </Grid>
     </StackPanel>
-    
 </Window>

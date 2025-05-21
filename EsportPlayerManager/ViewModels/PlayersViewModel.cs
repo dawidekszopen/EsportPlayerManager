@@ -11,7 +11,7 @@ using UserMenager.Helpers;
 
 namespace EsportPlayerManager.ViewModels;
 
-public partial class PlayerViewModel: ViewModelBase
+public partial class PlayersViewModel: ViewModelBase
 {
     private readonly PlayerService _playerService;
 
@@ -25,9 +25,9 @@ public partial class PlayerViewModel: ViewModelBase
 
     public ObservableCollection<Player> Players { get; } = [];
     
-    public PlayerViewModel(PlayerService playerService)
+    public PlayersViewModel()
     {
-        _playerService = playerService;
+        _playerService = App.PlayerService;
 
         AddPlayerCommand = new AsyncRelayCommand(AddPlayer);
 

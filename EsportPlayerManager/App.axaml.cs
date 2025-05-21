@@ -15,12 +15,12 @@ namespace EsportPlayerManager;
 
 public partial class App : Application
 {
-    private PlayerViewModel _playerViewModel;
     public override void Initialize()
     {
         AvaloniaXamlLoader.Load(this);
     }
-
+    
+    public static PlayerService PlayerService { get; private set; }
     public override void OnFrameworkInitializationCompleted()
     {
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
@@ -37,8 +37,8 @@ public partial class App : Application
                                    """;
 
             var playerRepository = new PlayerRepository(connectionString);
-            var playerService = new PlayerService(playerRepository);
-            _playerViewModel = new PlayerViewModel(playerService);
+            PlayerService = new PlayerService(playerRepository);
+            // _playerViewModel = new PlayerViewModel(playerService);
 
             _ = playerRepository.InitDb().ContinueWith(t =>
             {
@@ -50,7 +50,7 @@ public partial class App : Application
             
             desktop.MainWindow = new MainWindow
             {
-                DataContext = _playerViewModel
+                DataContext = new MainWindowViewModel()
             };
         }
 
