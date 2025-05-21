@@ -26,6 +26,3 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
 [/home/dawidek/RiderProjects/EsportPlayerManager/EsportPlayerManager/Views/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
-
-[/home/dawidek/RiderProjects/EsportPlayerManager/EsportPlayerManager/Views/PlayersView.axaml]
-build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

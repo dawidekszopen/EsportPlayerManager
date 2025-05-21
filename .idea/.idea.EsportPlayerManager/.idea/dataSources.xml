@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="esportmanager@localhost" uuid="b967cd53-70d7-4f5e-ab6e-4cbc28e11aaf">
+    <data-source source="LOCAL" name="esport_manager@localhost" uuid="3b8e28e8-805d-4734-adf6-0900bdb576ec">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
-      <configured-by-url>true</configured-by-url>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://localhost:5432/esportmanager</jdbc-url>
+      <jdbc-url>jdbc:postgresql://localhost:5432/esport_manager</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>

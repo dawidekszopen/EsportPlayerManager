@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "y34a7pm/6z8=",
+  "dgSpecHash": "Qw3n3kVbWZk=",
   "success": true,
   "projectFilePath": "/home/dawidek/RiderProjects/EsportPlayerManager/EsportPlayerManager/EsportPlayerManager.csproj",
   "expectedPackageFiles": [
@@ -38,8 +38,7 @@
     "/home/dawidek/.nuget/packages/skiasharp.nativeassets.win32/2.88.8/skiasharp.nativeassets.win32.2.88.8.nupkg.sha512",
     "/home/dawidek/.nuget/packages/system.io.pipelines/6.0.0/system.io.pipelines.6.0.0.nupkg.sha512",
     "/home/dawidek/.nuget/packages/system.numerics.vectors/4.5.0/system.numerics.vectors.4.5.0.nupkg.sha512",
-    "/home/dawidek/.nuget/packages/tmds.dbus.protocol/0.16.0/tmds.dbus.protocol.0.16.0.nupkg.sha512",
-    "/home/dawidek/.nuget/packages/microsoft.aspnetcore.app.ref/9.0.3/microsoft.aspnetcore.app.ref.9.0.3.nupkg.sha512"
+    "/home/dawidek/.nuget/packages/tmds.dbus.protocol/0.16.0/tmds.dbus.protocol.0.16.0.nupkg.sha512"
   ],
   "logs": []
 }
