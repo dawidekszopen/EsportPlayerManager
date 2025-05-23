@@ -8,6 +8,8 @@ namespace EsportPlayerManager.ViewModels;
 public partial class MainWindowViewModel : ViewModelBase
 {
     public ICommand ShowPlayerCommand { get; }
+    public ICommand ShowTournamentsCommand { get; }
+    public ICommand ShowTrainingCommand { get; }
     [ObservableProperty] private object? _currentView;
 
 
@@ -18,6 +20,7 @@ public partial class MainWindowViewModel : ViewModelBase
     public MainWindowViewModel()
     {
         ShowPlayerCommand = new RelayCommand(ShowPlayers);
+        ShowTournamentsCommand = new RelayCommand(ShowTournaments);
         CurrentView = new PlayersViewModel();
     }
 
@@ -25,7 +28,16 @@ public partial class MainWindowViewModel : ViewModelBase
     private void ShowPlayers()
     {
         CurrentView = new PlayersViewModel();
+        PlayerButtonEnabled = false;
         TournamentsButtonEnabled = true;
+        TrenningButtonEnabled = true;
+    }    
+    
+    private void ShowTournaments()
+    {
+        CurrentView = new TournamentsViewModel();
+        PlayerButtonEnabled = true;
+        TournamentsButtonEnabled = false;
         TrenningButtonEnabled = true;
     }    
 

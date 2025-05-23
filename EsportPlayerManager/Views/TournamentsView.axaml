@@ -1,0 +1,49 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModels="clr-namespace:EsportPlayerManager.ViewModels"
+             x:DataType="viewModels:TournamentsViewModel"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="EsportPlayerManager.Views.TournamentsView">
+    
+    <UserControl.DataContext>
+        <viewModels:TournamentsViewModel/>
+    </UserControl.DataContext>
+
+    <StackPanel>
+          <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <ListBox ItemsSource="{Binding Tournaments}" MaxHeight="500">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            
+                            <StackPanel>
+
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Name: " FontWeight="Bold"/>
+                                    <TextBlock Text="{Binding name}"/>
+                                </StackPanel>
+
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="EntryFee: " FontWeight="Bold"/>
+                                    <TextBlock Text="{Binding entry_fee}"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="PrizePool: " FontWeight="Bold"/>
+                                    <TextBlock Text="{Binding prize_pool}"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Minimum skill required: " FontWeight="Bold"/>
+                                    <TextBlock Text="{Binding min_skill_required}"/>
+                                </StackPanel>
+                            </StackPanel>
+                            
+                            <Button Content="Test" Margin="50 0 0 0 "/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </ScrollViewer>
+    </StackPanel>
+</UserControl>

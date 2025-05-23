@@ -21,6 +21,7 @@ public partial class App : Application
     }
     
     public static PlayerService PlayerService { get; private set; }
+    public static TournamentsService TournamentsService { get; private set; }
     public override void OnFrameworkInitializationCompleted()
     {
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
@@ -37,14 +38,26 @@ public partial class App : Application
                                    """;
 
             var playerRepository = new PlayerRepository(connectionString);
-            PlayerService = new PlayerService(playerRepository);
+            PlayerService = new PlayerService(playerRepository);  
+            
+            var tournamentsRepository = new TournamentsRepository(connectionString);
+            TournamentsService = new TournamentsService(tournamentsRepository);
             // _playerViewModel = new PlayerViewModel(playerService);
 
             _ = playerRepository.InitDb().ContinueWith(t =>
             {
                 if (t.Exception != null)
                 {
-                    Console.WriteLine($"DB ERROR: ${t.Exception}");
+                    Console.WriteLine($"DB ERROR PLAYER: ${t.Exception}");
+                }
+            }, TaskScheduler.Default);
+            
+            
+            _ = tournamentsRepository.InitDb().ContinueWith(t =>
+            {
+                if (t.Exception != null)
+                {
+                    Console.WriteLine($"DB ERROR TOURNAMENTS: ${t.Exception}");
                 }
             }, TaskScheduler.Default);
             

@@ -48,26 +48,27 @@
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel>
+                            
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="Nickname: "/>
-                                <TextBlock Text="{Binding nick_name}" FontSize="16"/>
+                                <TextBlock Text="Nickname: " FontWeight="Bold"/>
+                                <TextBlock Text="{Binding nick_name}"/>
                             </StackPanel>
 
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="Game: "/>
-                                <TextBlock Text="{Binding game}" FontSize="16"/>
+                                <TextBlock Text="Game: " FontWeight="Bold"/>
+                                <TextBlock Text="{Binding game}"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="Skill Level: "/>
-                                <TextBlock Text="{Binding skill_level}" FontSize="16"/>
+                                <TextBlock Text="Skill Level: " FontWeight="Bold"/>
+                                <TextBlock Text="{Binding skill_level}"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="Stress Level: "/>
-                                <TextBlock Text="{Binding stress_level}" FontSize="16"/>
+                                <TextBlock Text="Stress Level: " FontWeight="Bold"/>
+                                <TextBlock Text="{Binding stress_level}"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="Fatigue Level: "/>
-                                <TextBlock Text="{Binding fatigue_level}" FontSize="16"/>
+                                <TextBlock Text="Fatigue Level: " FontWeight="Bold"/>
+                                <TextBlock Text="{Binding fatigue_level}"/>
                             </StackPanel>
                         </StackPanel>
                     </DataTemplate>

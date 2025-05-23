@@ -27,6 +27,8 @@
                 
                 <Button Grid.Column="1" 
                     IsEnabled="{Binding TournamentsButtonEnabled}"
+                    Command="{Binding ShowTournamentsCommand}"
+
                     Margin="10" HorizontalContentAlignment="Center"
                     Content="Show Tournaments" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
                 <Button Grid.Column="2" 
